@@ -1,0 +1,71 @@
+source 'https://rubygems.org'
+
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+
+ruby '3.0.2'
+
+gem 'rails', '~> 6.1.4'
+gem 'dotenv-rails'
+gem 'enumerize'
+gem 'seed-fu', '~> 2.3'
+gem 'bootsnap', '>= 1.4.4', require: false
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'webpacker', '~> 5.0'
+gem 'active_interaction', '~> 4.0'
+gem 'active_model_serializers'
+
+# DB
+
+group :mysql do
+  gem 'mysql2', '>= 0.4.4'
+end
+
+group :doc do
+  gem 'yard'
+end
+
+group :development do
+  gem 'annotate'
+  gem 'bullet'
+  gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'rails-erd'
+  gem 'web-console', '>= 4.1.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+
+  # static code analysis
+  gem 'brakeman'
+  gem 'rubocop', '~> 0.74', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+end
+
+group :test do
+  gem 'database_rewinder'
+  gem 'faker'
+  gem 'fuubar'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'spring-commands-rspec'
+  gem 'timecop'
+end
+
+group :development, :test do
+  gem 'awesome_print'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'spring'
+  gem 'spring-watcher-listen'
+
+  # pry
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+end
+
+group :production, :staging do
+  gem 'puma'
+end

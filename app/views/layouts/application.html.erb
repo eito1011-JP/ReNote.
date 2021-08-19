@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>demo</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-fixed-top header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'demo', root_path, class: 'navbar-brand' %>
+        </div><!-- .navbar-header -->
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Link A</a></li>
+            <li><a href="">Link B</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav><!-- .header -->
+
+    <div class="app container-fluid left-sidebar">
+      <div class="sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a href="#">Link A</a></li>
+          <li><a href="#">Link B</a></li>
+        </ul>
+      </div><!-- .sidebar -->
+
+      <div class="main">
+        <%= yield %>
+      </div><!-- .main -->
+    </div><!-- .app -->
+  </div><!-- .wrapper -->
+
+  <%= javascript_pack_tag 'application' %>
+</body>
+</html>

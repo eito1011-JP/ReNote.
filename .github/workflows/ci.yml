@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ci:
+    name: 'CI'
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      RAILS_ENV: ci
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        ruby-version: ['3.0.2']
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Cache gems 📦
+        uses: actions/cache@preview
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+
+      - name: Cache node modules 📦
+        uses: actions/cache@preview
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Start MySQL 🚀
+        run: sudo /etc/init.d/mysql start
+
+      - name: Setup Project 👔
+        run: |
+          bin/rails db:prepare
+
+      - name: yarn install 💻
+        run:  yarn install --check-files
+
+      - name: Install dependencies 💻
+        run: |
+          gem install bundler --no-document
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4
+
+      - name: Run rubocop 🤖
+        run: bundle exec rubocop
+
+      - name: Run tests 🧪
+        run: bundle exec rspec ./spec
