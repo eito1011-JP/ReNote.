@@ -14,18 +14,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>今日 8/4(水)</td>
-      <td>英単語帳</td>
-      <td>30~40ページ</td>
-      <td>30分</td>
-    </tr>
-    <tr>
-      <td>明日 8/5(木)</td>
-      <td>化学基礎の教科書</td>
-      <td>50~64ページ</td>
-      <td>2時間</td>
-    </tr>
+    <ul>
+    <% @memories.each do |memory| %>
+      <td><%= memory.timestamps %></td>
+      <td><%= memory.text %></td>
+      <td><%= memory.range %></td>
+      <td><%= memory.time %></td>
+    <% end %>
+    </ul>
   </tbody>
-</table>
+</table> 
 
