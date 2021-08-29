@@ -12,27 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_08_22_072442) do
 
-  create_table "boards", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "memories", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.integer "review_schedule"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "text"
+    t.string "range"
+    t.integer "time"
+    t.integer "schedule"
   end
 
 end

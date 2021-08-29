@@ -1,0 +1,28 @@
+<%= form_with model: @memory, local:true do |f| %>
+  <div class="form-group">
+  <div class="ml-auto boards__linkBox">
+    <%= link_to '一覧', memories_path, class: 'btn btn-outline-dark' %>
+</div>
+  <label>教材名</label>
+  <%= f.text_field :text, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <label>学習範囲</label>
+  <%= f.text_field :range, class: "form-control" %>
+  </div> 
+
+  <div class="form-group">
+  <label>勉強時間</label>
+  <%= f.text_field :time, class: "form-control" %>
+  </div> 
+
+  <div class="form-group">
+  <label>復習スケジュール</label>
+  <%= f.text_field :schedule, class: "form-control" %>
+  </div> 
+
+  <div class="text-center">
+  <%= f.submit "登録する", class: "btn btn-primary" %>
+  </div>
+  <% end %>

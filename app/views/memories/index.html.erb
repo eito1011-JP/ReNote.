@@ -1,27 +1,32 @@
-<div class="d-flex align-items-center">
-  <h1>復習スケジュール一覧</h1>
+<h2>復習スケジュール一覧</h2>
+  <div class="ml-auto boards__linkBox">
+    <%= link_to '復習スケジュールの登録', new_memory_path, class: 'btn btn-outline-dark' %>
 </div>
-<div class="ml-auto boards__linkBox">
-    <a class="btn btn-outline-dark">復習スケジュールの登録</a>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+    <thead class="thead-light">
+      <tr>
+        <td>教材</td>
+        <td>学習範囲</td>
+        <td>勉強時間</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @memories.each do |memory| %>
+      <tr>
+        <td><%= memory.text %></td>
+        <td><%= memory.range %></td>
+        <td><%= memory.time %></td>
+        <td>[ <%= link_to 'Edit', edit_memory_path(memory) %> ]</td> 
+        <td>[ <%= link_to 'Delete', memory_path(memory), method: :delete, data:{ confirm: 'Are you sure?' }%>]</td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">日付</th>
-      <th scope="col">教材</th>
-      <th scope="col">学習範囲</th>
-      <th scope="col">勉強時間</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ul>
-    <% @memories.each do |memory| %>
-      <td><%= memory.timestamps %></td>
-      <td><%= memory.text %></td>
-      <td><%= memory.range %></td>
-      <td><%= memory.time %></td>
-    <% end %>
-    </ul>
-  </tbody>
-</table> 
+
+
+
 
