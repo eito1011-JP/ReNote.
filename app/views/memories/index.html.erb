@@ -7,6 +7,7 @@
     <table class="table table-striped">
     <thead class="thead-light">
       <tr>
+        <td></td>
         <td>教材</td>
         <td>学習範囲</td>
         <td>勉強時間</td>
@@ -19,8 +20,8 @@
         <td><%= link_to memory.text, memory_path(memory) %></td>
         <td><%= memory.range %></td>
         <td><%= memory.time %></td>
-        <td>[ <%= link_to 'Edit', edit_memory_path(memory) %> ]</td> 
-        <td>[ <%= link_to 'Delete', memory_path(memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%>]</td>
+        <td>[ <%= link_to '編集する', edit_memory_path(memory) %> ]</td> 
+        <td>[ <%= link_to '削除する', memory_path(memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%> ]</td>
       </tr>
       <% end %>
     </tbody>
