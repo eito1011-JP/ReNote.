@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 SeedFu.seed
 
-# Memory.create(text: '英単語帳', range:'30~42p', time:'50m' )
-# Memory.create(text: '国語', range:'80~94p', time:'30m' )
-# Memory.create(text: '数学', range:'50~60p', time:'15m' )
-# Memory.create(text: '英単語帳', range:'30~42p', time:'50m' )
-# Memory.create(text: '国語', range:'80~94p', time:'30m' )
-# Memory.create(text: '数学', range:'50~60p', time:'15m' )
+Rails.env == 'development'
+  (1..50).each do |i|
+  #   Memory.create(text: '教材名#{i}', range: '学習範囲#{i}', time: '勉強時間#{i}', schedule: '復習スケジュール#{i}')
+  
+end
+
+

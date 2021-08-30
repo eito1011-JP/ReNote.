@@ -33,7 +33,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-
+  gem 'kaminari'
 
   # static code analysis
   gem 'brakeman'

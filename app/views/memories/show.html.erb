@@ -1,1 +1,19 @@
-<h1>詳細画面です</h1>
+<div class="row">
+  <div class="col-md-12">
+    <h2><%= @memory.text %></h2>
+  </div>
+  <div>
+    学習範囲: <%= @memory.range %>
+  </div>
+  <div>
+     勉強時間: <%= @memory.time %>
+  </div>
+  <%# <div>
+     復習スケジュール: <%= @memory.schedule %>
+  <%# </div> %> 
+  <hr>
+
+  <div>
+    <%= link_to 'Home', root_path %>
+  </div>
+</div>

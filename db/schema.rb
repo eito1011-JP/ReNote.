@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_072442) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "text"
     t.string "range"
-    t.integer "time"
+    t.string "time"
     t.integer "schedule"
   end
 

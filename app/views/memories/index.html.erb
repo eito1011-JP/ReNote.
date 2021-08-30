@@ -15,17 +15,19 @@
     <tbody>
       <% @memories.each do |memory| %>
       <tr>
-        <td><%= memory.text %></td>
+        <td><%= link_to memory.text, memory_path(memory) %></td>
         <td><%= memory.range %></td>
         <td><%= memory.time %></td>
         <td>[ <%= link_to 'Edit', edit_memory_path(memory) %> ]</td> 
-        <td>[ <%= link_to 'Delete', memory_path(memory), method: :delete, data:{ confirm: 'Are you sure?' }%>]</td>
+        <td>[ <%= link_to 'Delete', memory_path(memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%>]</td>
       </tr>
       <% end %>
     </tbody>
     </table>
   </div>
 </div>
+
+<%= paginate @memories %>
 
 
 

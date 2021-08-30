@@ -4,7 +4,7 @@ class CreateMemories < ActiveRecord::Migration[6.1]
       t.timestamps
       t.string :text
       t.string :range
-      t.integer :time
+      t.string :time
       t.integer :schedule
     end
   end
