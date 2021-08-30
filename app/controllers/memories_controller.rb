@@ -4,7 +4,7 @@ class MemoriesController < ApplicationController
   def index
     # @memories = Memory.all
     @memories =Memory.page(params[:page])
-    # Article.all.page(params[:page])
+
   end
   
   def new

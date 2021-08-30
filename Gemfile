@@ -14,6 +14,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 5.0'
 gem 'active_interaction', '~> 4.0'
 gem 'active_model_serializers'
+gem 'bcrypt', '~> 3.1.7'
 
 # DB
 
