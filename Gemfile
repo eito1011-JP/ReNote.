@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
+gem 'sass-rails'
 gem 'rails', '~> 6.1.4'
 gem 'dotenv-rails'
 gem 'enumerize'
