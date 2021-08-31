@@ -205,7 +205,4 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  #  users: 
-  #    name: ユーザー名
-  #    password: パスワード
-  #    password_confirmation: パスワード（確認） 
+
