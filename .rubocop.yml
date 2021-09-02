@@ -111,7 +111,7 @@ Style/RedundantFetchBlock:
 
 Style/RedundantRegexpCharacterClass:
   Enabled: true
-
+              
 Style/RedundantRegexpEscape:
   Enabled: true
 

@@ -36,7 +36,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'kaminari'
-
+  gem 'jquery-rails', '~>4.4.0'
   # static code analysis
   gem 'brakeman'
   gem 'rubocop', '~> 0.74', require: false

@@ -1,1 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
+
+h2 {
+  margin: 30px 0;
+}
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination > li > a {
+  border: none;
+  color: #999;
+}
+.pagination > li > a:hover {
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+.pagination > .active > a {
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+.pagination > .active > a:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
+.user {
+  text-align: center;
+}
+
+.top-title {
+  text-align: center;
+}
+
+body {
+  background-color: aquamarine;
+}

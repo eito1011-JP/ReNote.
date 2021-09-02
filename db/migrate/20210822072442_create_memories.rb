@@ -6,6 +6,7 @@ class CreateMemories < ActiveRecord::Migration[6.1]
       t.string :range
       t.string :time
       t.integer :schedule
+      t.bigint :done
     end
   end
 end

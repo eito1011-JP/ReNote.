@@ -1,7 +1,4 @@
 <h2>復習スケジュール一覧</h2>
-  <div class="ml-auto boards__linkBox">
-    <%= link_to '復習スケジュールの登録', new_memory_path, class: 'btn btn-outline-dark' %>
-</div>
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped">
@@ -16,7 +13,7 @@
       <tbody>
         <% @memories.each do |memory| %>
         <tr>
-         <td><%= check_box_tag :test1 %></td>
+         <td><%= check_box_tag '', '', memory.text, {'data-id' => memory.id } %></td>
           <td><%= link_to memory.text, memory_path(memory) %></td>
           <td><%= memory.range %></td>
           <td><%= memory.time %></td>
@@ -28,6 +25,14 @@
     </table>
   </div>
 </div>
+
+<script>
+   $(function(){
+     $("input[type=checkbox]").click(function(){
+       $.post('/memory/' + $(this).data('id') + '/toggle');
+     });
+   });
+</script>
 
 <%= paginate @memories %>
 

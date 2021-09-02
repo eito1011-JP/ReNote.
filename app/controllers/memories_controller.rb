@@ -14,9 +14,9 @@ class MemoriesController < ApplicationController
   def create
     @memory = Memory.new(memory_params)
     if @memory.save
-      redirect_to root_path, notice: '登録が完了しました!'
+      redirect_to root_path, notice: '投稿が完了しました!'
     else
-      flash[:alert] = '登録が完了できませんでした'
+      flash[:alert] = '投稿が完了できませんでした'
       render :new
     end     
   end
@@ -39,6 +39,13 @@ class MemoriesController < ApplicationController
   def destroy
     @memory.destroy
     redirect_to root_path, notice: '復習スケジュールを削除しました'
+  end
+
+  def toggle
+    head :no_content
+    @memory = Memory.find(params[:id])
+    @memory.done = !@memory.done
+    @memory.save
   end
 
   private
