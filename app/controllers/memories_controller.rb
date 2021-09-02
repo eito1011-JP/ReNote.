@@ -14,7 +14,7 @@ class MemoriesController < ApplicationController
   def create
     @memory = Memory.new(memory_params)
     if @memory.save
-      redirect_to root_path, notice: '投稿が完了しました!'
+      redirect_to memories_path, notice: '投稿が完了しました!'
     else
       flash[:alert] = '投稿が完了できませんでした'
       render :new

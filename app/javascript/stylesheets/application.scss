@@ -33,10 +33,21 @@ h2 {
   text-align: center;
 }
 
-.top-title {
+
+.login-form {
   text-align: center;
 }
 
 body {
   background-color: aquamarine;
+}
+
+.wrap {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin:10%;
+  margin-left:30px;
+  font-size: 30px;
+  flex-flow: column;
 }

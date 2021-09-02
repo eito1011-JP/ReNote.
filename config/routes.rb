@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   get 'mypage', to: 'users#me'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  root to: 'top#index'
+  root 'home#index'
   resources :memories
-  # root to: 'memories#index'
   resources :users, only: %i[new create]
   post '/memories/:id/toggle' => 'memories#toggle'
 

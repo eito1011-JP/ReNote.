@@ -13,7 +13,7 @@
       <tbody>
         <% @memories.each do |memory| %>
         <tr>
-         <td><%= check_box_tag '', '', memory.text, {'data-id' => memory.id } %></td>
+         <td><%= check_box_tag '', '', memory.done, {'data-id' => memory.id } %></td>
           <td><%= link_to memory.text, memory_path(memory) %></td>
           <td><%= memory.range %></td>
           <td><%= memory.time %></td>
