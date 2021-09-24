@@ -38,8 +38,12 @@ h2 {
   text-align: center;
 }
 
-body {
-  background-color: aquamarine;
+
+.bac
+.cover{
+  background-image:  image-url('../images/atlas-1052011_1920.jpg');
+  background-size:  cover;
+  opacity:  0.7;
 }
 
 .wrap {
@@ -51,3 +55,4 @@ body {
   font-size: 30px;
   flex-flow: column;
 }
+

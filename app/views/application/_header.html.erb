@@ -18,12 +18,11 @@
               ユーザー
               </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <% if @current_user %>
-              <li><%= link_to 'マイページ', mypage_path, class: 'dropdown-item' %></li>
-              <li><%= link_to 'ログアウト', logout_path, method: :delete, class: 'dropdown-item' %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, class: 'dropdown-item',method: :delete%></li>
             <% else %>
-              <li><%= link_to '登録', new_user_path, class: 'dropdown-item' %></li>
-              <li><%= link_to 'ログイン', root_path, class: 'dropdown-item' %></li>
+              <li><%= link_to '登録', new_user_registration_path, class: 'dropdown-item' %></li>
+              <li><%= link_to 'ログイン', new_user_session_path, class: 'dropdown-item' %></li>
             <% end %>
           </ul>
         </div>
@@ -32,3 +31,7 @@
 
   </div>
 </nav>
+
+
+<%# <%= link_to_unless_current “TOP”, root_path %> 
+<%# <%= link_to “メンバー一覧”, members_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_075800) do
+ActiveRecord::Schema.define(version: 2021_09_23_070531) do
 
   create_table "memories", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -19,15 +19,22 @@ ActiveRecord::Schema.define(version: 2021_08_30_075800) do
     t.string "range"
     t.string "time"
     t.integer "schedule"
+    t.bigint "done"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "false"
-    t.string "password_digest", null: false
+    t.string "email"
+    t.string "encrypted_password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
+  add_foreign_key "memories", "users"
 end

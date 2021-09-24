@@ -42,6 +42,8 @@ group :development do
   gem 'rubocop', '~> 0.74', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
+  gem 'devise'
+
 end
 
 group :test do

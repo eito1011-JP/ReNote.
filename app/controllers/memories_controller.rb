@@ -3,8 +3,7 @@ class MemoriesController < ApplicationController
 
   def index
     # @memories = Memory.all
-    @memories =Memory.page(params[:page])
-
+    @memories =Memory.where(user_id: current_user.id).page(params[:page])
   end
   
   def new
@@ -13,11 +12,14 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = Memory.new(memory_params)
+    @memory.user_id = current_user.id
     if @memory.save
       redirect_to memories_path, notice: '投稿が完了しました!'
     else
       flash[:alert] = '投稿が完了できませんでした'
-      render :new
+      render :new 
+      binding.pry
+
     end     
   end
 
@@ -29,7 +31,7 @@ class MemoriesController < ApplicationController
 
   def update
     if @memory.update(memory_params)
-      redirect_to root_path, notice: '更新が完了しました!'
+      redirect_to memories_path, notice: '更新が完了しました!'
     else 
       flash[:alert] = '更新できませんでした'
       render :edit
@@ -38,7 +40,7 @@ class MemoriesController < ApplicationController
   
   def destroy
     @memory.destroy
-    redirect_to root_path, notice: '復習スケジュールを削除しました'
+    redirect_to memories_path, notice: '復習スケジュールを削除しました'
   end
 
   def toggle
