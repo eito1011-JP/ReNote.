@@ -10,18 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_070531) do
+ActiveRecord::Schema.define(version: 2021_09_25_122011) do
 
   create_table "memories", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
     t.string "text"
     t.string "range"
     t.string "time"
-    t.integer "schedule"
     t.bigint "done"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "schedules", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "schedule"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|

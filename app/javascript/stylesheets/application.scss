@@ -39,11 +39,14 @@ h2 {
 }
 
 
-.bac
-.cover{
-  background-image:  image-url('../images/atlas-1052011_1920.jpg');
+body {
+  background-image:  url('../../assets/images/photo-1628984929118-af07f426c3fa.jpeg');
   background-size:  cover;
-  opacity:  0.7;
+  // opacity:  0.7;
+}
+
+.container {
+  opacity: 0.7;
 }
 
 .wrap {
@@ -55,4 +58,12 @@ h2 {
   font-size: 30px;
   flex-flow: column;
 }
+
+.form-date {
+  display: inline-block;
+  width: auto;
+  padding: 0.375rem 0.75rem;
+}
+
+
 

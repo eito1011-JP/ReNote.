@@ -3,7 +3,7 @@ class MemoriesController < ApplicationController
 
   def index
     # @memories = Memory.all
-    @memories =Memory.where(user_id: current_user.id).page(params[:page])
+    @memories =Memory.where(user_id: current_user.id).order('date ASC').page(params[:page])
   end
   
   def new
@@ -18,8 +18,6 @@ class MemoriesController < ApplicationController
     else
       flash[:alert] = '投稿が完了できませんでした'
       render :new 
-      binding.pry
-
     end     
   end
 
@@ -52,7 +50,7 @@ class MemoriesController < ApplicationController
 
   private
   def memory_params
-    params.require(:memory).permit(:text, :time, :range, :schedule)
+    params.require(:memory).permit(:date, :text, :time, :range, :schedule)
   end
 
   def set_target_memory

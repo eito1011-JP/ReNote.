@@ -13,6 +13,7 @@
   </head>
 
   <body>
+  <div class="cover">
   <%= render 'header' %>
   <div class="container">
     <% if flash[:notice] %>
@@ -24,6 +25,7 @@
   </div>
   <div class="container">
     <%= yield %>
+    </div>
     </div>
   </body>
 </html>
