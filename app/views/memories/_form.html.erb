@@ -27,7 +27,7 @@
 
   <div class="form-group">
     <label>復習スケジュール</label>
-    <%= f.text_field :schedule, class: "form-control" %>
+    <%= f.text_field :schedule, value: Schedule.pluck(:schedule), class: "form-control"%>
   </div> 
 
   <div class="text-center">

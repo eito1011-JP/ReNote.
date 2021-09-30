@@ -12,15 +12,19 @@
       </thead>
       <tbody>
         <% @memories.each do |memory| %>
-        <tr>
-         <td><%= memory.date %></td>
-         <td><%= check_box_tag '', '', memory.done, {'data-id' => memory.id } %></td>
-          <td><%= link_to memory.text, memory_path(memory) %></td>
-          <td><%= memory.range %></td>
-          <td><%= memory.time %></td>
-          <td>[ <%= link_to '編集する', edit_memory_path(memory) %> ]</td> 
-          <td>[ <%= link_to '削除する', memory_path(memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%> ]</td>
-       </tr>
+        <% arrays.each do |array| %>
+          <tr>
+            <td><%= memory.date %></td>
+            <td><%= check_box_tag '', '', memory.done, {'data-id' => memory.id } %></td>
+            <td><%= link_to memory.text, memory_path(memory) %></td>
+            <td><%= memory.range %></td>
+            <td><%= memory.time %></td>
+            <td><%= array.schedule%></td>
+
+            <td>[ <%= link_to '編集する', edit_memory_path(memory) %> ]</td> 
+            <td>[ <%= link_to '削除する', memory_path(memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%> ]</td>
+        </tr>
+      <% end %> 
        <% end %>
     </tbody>
     </table>

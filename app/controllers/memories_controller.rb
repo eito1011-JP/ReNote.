@@ -4,15 +4,33 @@ class MemoriesController < ApplicationController
   def index
     # @memories = Memory.all
     @memories =Memory.where(user_id: current_user.id).order('date ASC').page(params[:page])
+
+ 
+
+
   end
   
   def new
     @memory = Memory.new
+ 
   end
 
   def create
     @memory = Memory.new(memory_params)
     @memory.user_id = current_user.id
+    arrays = params[:memory][:schedule].split(",")
+  
+    arrays.each do |array|
+      Schedule.create(schedule: array)
+      
+      # puts paramsで値の確認してみた 
+      # puts params[:memory][:schedule]
+  
+     
+      
+    end 
+
+    
     if @memory.save
       redirect_to memories_path, notice: '投稿が完了しました!'
     else
@@ -22,6 +40,7 @@ class MemoriesController < ApplicationController
   end
 
   def show
+    @memory = Memory.find(params[:id])
   end
   
   def edit
@@ -50,8 +69,13 @@ class MemoriesController < ApplicationController
 
   private
   def memory_params
-    params.require(:memory).permit(:date, :text, :time, :range, :schedule)
+    params.require(:memory).permit(:date, :text, :time, :range,)
   end
+
+  def schedule_params
+    params.require(:schedule).permit(:schedule)
+  end
+
 
   def set_target_memory
     @memory = Memory.find(params[:id])
