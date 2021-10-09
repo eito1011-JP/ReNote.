@@ -40,9 +40,8 @@ h2 {
 
 
 body {
-  background-image:  url('../../assets/images/photo-1628984929118-af07f426c3fa.jpeg');
+  background-image:  url('../../assets/images/photo-1596367407372-96cb88503db6.jpeg');
   background-size:  cover;
-  // opacity:  0.7;
 }
 
 .container {
@@ -64,6 +63,20 @@ body {
   width: auto;
   padding: 0.375rem 0.75rem;
 }
+
+.top-tittle {
+  border-bottom: 1px solid;
+}
+
+.top-register {
+  color:rgb(0, 0, 0);
+}
+
+.top-login {
+  color:rgb(0, 0, 0);
+}
+
+
 
 
 

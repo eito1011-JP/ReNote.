@@ -4,28 +4,26 @@
     <table class="table table-striped">
       <thead class="thead-light">
         <tr class="index">
-          <td>日付</td>
+          <%# <td>日付</td>
           <td>教材</td>
           <td>学習範囲</td>
-        <td>勉強時間</td>
+        <td>勉強時間</td> %>
         </tr>
       </thead>
       <tbody>
-        <% @memories.each do |memory| %>
-        <% arrays.each do |array| %>
-          <tr>
-            <td><%= memory.date %></td>
-            <td><%= check_box_tag '', '', memory.done, {'data-id' => memory.id } %></td>
-            <td><%= link_to memory.text, memory_path(memory) %></td>
-            <td><%= memory.range %></td>
-            <td><%= memory.time %></td>
-            <td><%= array.schedule%></td>
-
-            <td>[ <%= link_to '編集する', edit_memory_path(memory) %> ]</td> 
-            <td>[ <%= link_to '削除する', memory_path(memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%> ]</td>
-        </tr>
-      <% end %> 
-       <% end %>
+     
+        
+        <% Schedule.order(schedule: "ASC").all.each do |s| %>
+            <tr>
+              <td><%= check_box_tag '', '', s.memory.done, {'data-id' => s.memory.done } %></td>
+              <td><%=  s.schedule %></td>
+              <td><%= s.memory.text  %></td>
+              <td><%= link_to s.memory.range, memory_path(s.memory) %></td>
+              <td><%= s.memory.time %></td>
+              <td>[ <%=  link_to '編集する', edit_memory_path(s.memory) %> ]</td> 
+              <td>[ <%= link_to '削除する', memory_path(s.memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%> ]</td>
+            </tr>
+          <% end %> 
     </tbody>
     </table>
   </div>

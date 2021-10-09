@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_25_125126) do
+ActiveRecord::Schema.define(version: 2021_09_25_122011) do
 
   create_table "memories", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -24,15 +24,10 @@ ActiveRecord::Schema.define(version: 2021_09_25_125126) do
     t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
-  create_table "memories_schedules", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "schedule_id"
-    t.integer "memory_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "schedules", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "schedule"
+    t.date "schedule"
+    t.integer "memory_id"
+    t.integer "schedule_form"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -37,6 +37,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'kaminari'
   gem 'jquery-rails', '~>4.4.0'
+  gem 'devise-i18n'
   # static code analysis
   gem 'brakeman'
   gem 'rubocop', '~> 0.74', require: false

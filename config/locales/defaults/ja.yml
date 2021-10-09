@@ -212,3 +212,19 @@ ja:
        previous: <i class="fas fa-angle-left"></i>
        next: <i class="fas fa-angle-right"></i>
        truncate: "..." 
+  devise:
+    failure:
+      user:
+        not_found_in_database: "email、あるいはパスワードが間違っています"
+  devise:
+    failure:
+      user:
+        invalid: "空欄に値を入力してください"
+  devise:
+    sessions:
+      user:
+        signed_in: "ログインしました"
+  devise:
+    failure:
+      user:
+        unauthenticated: "ログアウトしました"

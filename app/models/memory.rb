@@ -1,8 +1,7 @@
 class Memory < ApplicationRecord
   belongs_to :user
-
-  has_many :memories_schedules
-  has_many :schedules, through: :memories_schedules
+  has_many :schedules, dependent: :destroy
+  
  
 
   validates :text, presence: { message: "テキスト名を入力してください"}
