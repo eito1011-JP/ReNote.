@@ -13,15 +13,15 @@
       <tbody>
      
         
-        <% Schedule.order(schedule: "ASC").all.each do |s| %>
+        <% Schedule.order(schedule: "ASC").joins(:memory).where(memory: { user_id: current_user.id }).each do |s| %>
+        
             <tr>
-              <td><%= check_box_tag '', '', s.memory.done, {'data-id' => s.memory.done } %></td>
               <td><%=  s.schedule %></td>
               <td><%= s.memory.text  %></td>
               <td><%= link_to s.memory.range, memory_path(s.memory) %></td>
               <td><%= s.memory.time %></td>
               <td>[ <%=  link_to '編集する', edit_memory_path(s.memory) %> ]</td> 
-              <td>[ <%= link_to '削除する', memory_path(s.memory), method: :delete, data:{ confirm: '本当に消していいですか？' }%> ]</td>
+              <td>[ <%= link_to '完了する', memory_path(s.memory), method: :delete, data:{ confirm: '本当に完了していいですか？' }%> ]</td>
             </tr>
           <% end %> 
     </tbody>

@@ -1,11 +1,15 @@
 <h2 class = top-logo>ReNote.</h2>
 <h3 class ="top-tittle">科学的に基づいた合理的な学習</h3>
-
 <p>エビングハウスの忘却曲線によると<br>学んだことを復習する最適なタイミングは決まっています</p>
+
+
 <div class="wrap">
-  
+<% if user_signed_in? %>
+<h4>現在ログイン中です</h4>
+<h4>あなたのEメール <%= current_user.email %></h4>
+<% else %>
      <a class = "top-register" href="/users/sign_up">新規登録</a> 
      <a class ="top-login" href="/users/sign_in">ログイン</a>      
-   
+ <% end %>
 </div>
 

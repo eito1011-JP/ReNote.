@@ -4,7 +4,7 @@ class MemoriesController < ApplicationController
   def index
     
     # @memories = Memory.all
-    @memories =Memory.where(user_id: current_user.id).order('date ASC').page(params[:page])
+    @memories =Memory.where(user_id: current_user.id).order('date ASC').page(params[:page]).per(3)
 
   end
   
@@ -38,7 +38,8 @@ class MemoriesController < ApplicationController
     arrays.each do |a|
       
       @memory.schedules.build(schedule: Time.current.days_since(a.to_i).to_date, schedule_form: a.to_i)
-
+      
+# binding.pry
 
     end
 
@@ -58,31 +59,26 @@ class MemoriesController < ApplicationController
   end
   
   def edit
+    @memory = Memory.find_by(params[:id])
   end
 
   def update
-
     if @memory.update(memory_params)
       redirect_to memories_path, notice: '更新が完了しました!'
+     
     else 
       flash[:alert] = '更新できませんでした'
       render :edit
     end
   end
   
-  def destroy
-    @memory.destroy
-    redirect_to memories_path, notice: '復習スケジュールを削除しました'
-  end
-
-  def toggle
-    head :no_content
-    @memory = Memory.find(params[:id])
-    @memory.done = !@memory.done
-    @memory.save
-  end
-
  
+
+
+  def schedule
+    @memory = Memory.new(memory_params)
+    @memory.update()
+  end
 
   private
   def memory_params

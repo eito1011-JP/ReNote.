@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :memoires, dependent: :destroy, foreign_key: :memory_user_id
+  has_many :memoires, foreign_key: :memory_user_id
   
 devise :database_authenticatable, :registerable,
        :recoverable, :rememberable, :validatable

@@ -14,4 +14,13 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     redirect_to root_path
   end
+
+  def after_sign_in_path_for(resource)
+    memories_path
+  end 
+  
+  #ログアウト後のリダイレクト先
+  def after_sign_out_path_for(resource)
+    root_path
+  end 
 end

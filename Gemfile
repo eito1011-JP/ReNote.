@@ -38,6 +38,7 @@ group :development do
   gem 'kaminari'
   gem 'jquery-rails', '~>4.4.0'
   gem 'devise-i18n'
+  gem 'rails-i18n', '~> 6.0'
   # static code analysis
   gem 'brakeman'
   gem 'rubocop', '~> 0.74', require: false
