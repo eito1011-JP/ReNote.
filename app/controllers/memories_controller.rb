@@ -75,6 +75,7 @@ class MemoriesController < ApplicationController
  
 
 
+
   def schedule
     @memory = Memory.new(memory_params)
     @memory.update()

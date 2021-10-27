@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   def update
-    @memory =  Memory.find(params[:id])
+    # @memory =  Memory.find(params[:id])
     schedules = Schedule.find(params[:id])
     
     if  schedules.update(schedule: Time.current.days_since(a.to_i).to_date, schedule_form: a.to_i)
@@ -12,12 +12,12 @@ class SchedulesController < ApplicationController
   end
 
   def edit
-# binding.pry
     @schedule = Schedule.find_by(params[:id])
   end
 
   def destroy
-    schedules.destroy
+    @schedule = Schedule.find_by(params[:id])
+    @schedule.destroy
     redirect_to memories_path, notice: 'お疲れ様です！復習スケジュールを完了しました'
   end
 
