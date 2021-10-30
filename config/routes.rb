@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :memories
   resources :users, only: %i[new create]
   post '/memories/:id/toggle' => 'memories#toggle'
-  devise_for :users, controllers: {  }
+  
+  devise_for :users
+
   resources :memories do
   
     resource :schedules, only: [:update, :edit, :destroy]

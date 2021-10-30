@@ -2,10 +2,7 @@ class MemoriesController < ApplicationController
   before_action :set_target_memory, only: %i[show edit update destroy]
 
   def index
-    
-    # @memories = Memory.all
-    @memories =Memory.where(user_id: current_user.id).order('date ASC').page(params[:page]).per(3)
-
+    @memories =Memory.where(user_id: current_user.id).order('date ASC').page(params[:page]).per(5)
   end
   
   def new
@@ -65,7 +62,6 @@ class MemoriesController < ApplicationController
   def update
     if @memory.update(memory_params)
       redirect_to memories_path, notice: '更新が完了しました!'
-     
     else 
       flash[:alert] = '更新できませんでした'
       render :edit

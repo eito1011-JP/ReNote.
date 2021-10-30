@@ -13,7 +13,6 @@
       <tbody>
      
         
-         
         <% Schedule.order(schedule: "ASC").joins(:memory).where(memory: { user_id: current_user.id }).each do |s| %>
             <tr>
               <td><%=  s.schedule %></td>
@@ -38,7 +37,3 @@
 </script>
 
 <%= paginate @memories %>
-
-
-
-

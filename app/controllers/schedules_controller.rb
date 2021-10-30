@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+
+
   def update
     # @memory =  Memory.find(params[:id])
     schedules = Schedule.find(params[:id])
@@ -11,9 +13,7 @@ class SchedulesController < ApplicationController
     end
   end
 
-  def edit
-    @schedule = Schedule.find_by(params[:id])
-  end
+
 
   def destroy
     @schedule = Schedule.find_by(params[:id])

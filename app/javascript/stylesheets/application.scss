@@ -40,7 +40,7 @@ h2 {
 
 
 body {
-    background-image:  url('../../assets/images/photo-1615800098779-1be32e60cca3.jpeg'); 
+    background-image:  url('../../assets/images/photo-1518655048521-f130df041f66.jpeg'); 
   background-size:  cover;
 }
 
@@ -75,6 +75,19 @@ body {
 .top-login {
   color:rgb(0, 0, 0);
 }
+
+@media screen and (min-width:1024px) {
+/*pc用のscssを記述*/
+}
+
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  /*tablet用のscssを記述*/
+}
+  
+@media screen and (max-width:639px) {
+  /*スマホ用のscssを記述*/
+  }
+     
 
 
 
