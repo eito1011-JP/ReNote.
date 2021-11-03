@@ -1,0 +1,23 @@
+
+[1mFrom:[0m /app/app/controllers/schedules_controller.rb:36 SchedulesController#destroy:
+
+    [1;34m20[0m: [32mdef[0m [1;34mdestroy[0m
+    [1;34m21[0m:   [1;34m# binding.pry[0m
+    [1;34m22[0m:   schedules = [1;34;4mSchedule[0m.find(params[[33m:id[0m])
+    [1;34m23[0m:   [1;34m# schedules.destroy[0m
+    [1;34m24[0m:   [1;34m# binding.pry[0m
+    [1;34m25[0m:   [1;34m# @schedule_memory_id = Memory.find(params[:memory_id])[0m
+    [1;34m26[0m:   @memory = [1;34;4mMemory[0m.find(params[[33m:memory_id[0m])
+    [1;34m27[0m:   
+    [1;34m28[0m:   [32mif[0m @memory.schedules.count == [1;34m0[0m
+    [1;34m29[0m:     @memory.destroy
+    [1;34m30[0m:     redirect_to memories_path, [35mnotice[0m: [31m[1;31m'[0m[31mお疲れ様です！復習スケジュールを完了しました[1;31m'[0m[31m[0m
+    [1;34m31[0m:   [32melse[0m
+    [1;34m32[0m:     [1;34m# binding.pry[0m
+    [1;34m33[0m:     schedules.destroy
+    [1;34m34[0m:     binding.pry
+    [1;34m35[0m:     
+ => [1;34m36[0m:     redirect_to memories_path, [35mnotice[0m: [31m[1;31m'[0m[31mお疲れ様です！復習スケジュールを完了しました[1;31m'[0m[31m[0m
+    [1;34m37[0m:   [32mend[0m
+    [1;34m38[0m: [32mend[0m
+

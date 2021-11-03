@@ -14,14 +14,14 @@
      
         
          
-        <% Schedule.order(schedule: "ASC").joins(:memory).where(memory: { user_id: current_user.id }).each do |s| %>
+        <% @schedules.order(:date).joins(:memory).each do |s| %>
             <tr>
               <td><%=  s.schedule %></td>
               <td><%= s.memory.text  %></td>
               <td><%= link_to s.memory.range, memory_path(s.memory) %></td>
               <td><%= s.memory.time %></td>
               <td>[ <%=  link_to '編集する', edit_memory_path(s.memory,s) %> ]</td> 
-              <td>[ <%= link_to '完了する', memory_schedules_path(s.memory,s), method: :delete, data:{ confirm: '本当に完了していいですか？' }%> ]</td>
+              <td>[ <%= link_to '完了する', memory_schedule_path(s.memory,s), method: :delete, data:{ confirm: '本当に完了していいですか？' }%> ]</td>
             </tr>   
           <% end %> 
     </tbody>
@@ -37,7 +37,7 @@
    });
 </script>
 
-<%= paginate @memories %>
+<%= paginate @schedules %>
 
 
 

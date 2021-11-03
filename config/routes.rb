@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :memories do
   
-    resource :schedules, only: [:update, :edit, :destroy]
+    resources :schedules, only: [:update, :edit, :destroy]
    
     
   end
