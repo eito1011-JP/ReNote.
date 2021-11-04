@@ -19,6 +19,7 @@ test:
 
 production:
   <<: *default
+  encoding: unicode
 
 staging:
   <<: *default
