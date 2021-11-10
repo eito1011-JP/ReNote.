@@ -1,5 +1,5 @@
 ARG RUBY_VERSION
-FROM ruby:$RUBY_VERSION
+FROM ruby:3.02
 
 ARG BUNDLER_VERSION
 
@@ -30,6 +30,9 @@ RUN gem update --system &&\
     mkdir -p /app
 
 WORKDIR /app
+
+VOLUME /app/public
+VOLUME /app/tmp
 
 ADD Gemfile /app/Gemfile
 ADD Gemfile.lock /app/Gemfile.lock
