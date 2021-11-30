@@ -23,6 +23,6 @@ http://localhost3000
 3 | i18n | ログインページ等を日本語化する |
 
 ## 使用技術
-ruby、rails、docker
+使用言語: ruby,フレームワーク: rails,ネットワーク: AWS,開発環境: Docker-Compose
 ## Function I’m gonna make
 ## DB(データベース設計)

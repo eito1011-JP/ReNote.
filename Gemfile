@@ -72,4 +72,5 @@ end
 
 group :production, :staging do
   gem 'puma'
+  gem 'unicorn', '6.0.0'
 end
