@@ -1,2 +1,2 @@
-ReNote./get-pip.py/* linguist-vendored
+*.python linguist-vendored
 
