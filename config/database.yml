@@ -19,14 +19,14 @@ test:
 
 production:
   <<: *default
- database: ReNote._production
- encoding: unicode
- database: <%= Rails.application.credentials.db[:database] %>
- username: <%= Rails.application.credentials.db[:username] %>
- password: <%= Rails.application.credentials.db[:password] %>
- socket: <%= Rails.application.credentials.db[:socket] %>
- pool: 20
- timeout: 1000
+  database: ReNote._production
+  encoding: unicode
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  socket: <%= Rails.application.credentials.db[:socket] %>
+  pool: 20
+  timeout: 1000
 
 staging:
   <<: *default
