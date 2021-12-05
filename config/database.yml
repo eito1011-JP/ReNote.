@@ -19,11 +19,7 @@ test:
 
 production:
   <<: *default
- database: test_app_production
- adapter: mysql2
- encoding: utf8mb4
- charset: utf8mb4
- collation: utf8mb4_general_ci
+ database: ReNote._production
  encoding: unicode
  database: <%= Rails.application.credentials.db[:database] %>
  username: <%= Rails.application.credentials.db[:username] %>
