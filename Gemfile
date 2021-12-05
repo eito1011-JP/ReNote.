@@ -20,6 +20,7 @@ gem 'bcrypt', '~> 3.1.7'
 # DB
 
 group :mysql do
+  gem 'mysql2', '>= 0.4.4'
 end
 
 group :doc do
