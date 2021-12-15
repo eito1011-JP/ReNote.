@@ -5,13 +5,14 @@ default: &default
   collation: utf8mb4_general_ci
   pool: 5
   host:     <%= ENV['DATABASE_HOST'] %>
-  database: <%= ENV['DATABASE_NAME'] %>
+  database: rs
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket:   <%= ENV['DATABASE_SOCKET'] %>
 
 development:
   <<: *default
+  database: rs_development
 
 test:
   <<: *default
@@ -19,14 +20,8 @@ test:
 
 production:
   <<: *default
-  database: ReNote._production
-  encoding: unicode
-  database: <%= Rails.application.credentials.db[:database] %>
-  username: <%= Rails.application.credentials.db[:username] %>
-  password: <%= Rails.application.credentials.db[:password] %>
-  socket: <%= Rails.application.credentials.db[:socket] %>
-  pool: 20
   timeout: 1000
-
+  database: rs_production
 staging:
   <<: *default
+  database: rs_staging
