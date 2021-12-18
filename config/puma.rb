@@ -17,26 +17,6 @@ threads min_threads_count, max_threads_count
 
 #port        ENV.fetch("PORT") { 3000 }
 bind "unix:///var/www/ReNote./tmp/sockets/puma.sock"
-"config/puma.rb" 354L, 14367C                                13,68        先頭
-# Any libraries that use thread pools should be configured to match
-# the maximum value specified for Puma. Default is set to 5 threads for minimum
-# and maximum, this matches the default thread size of Active Record.
-#
-# threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
-# min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
-# threads threads_count, threads_count
-# threads min_threads_count, max_threads_count
-
-max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
-min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
-threads min_threads_count, max_threads_count
-
-
-#port        ENV.fetch("PORT") { 3000 }
-bind "unix:///var/www/ReNote./tmp/sockets/puma.sock"
-
-
-
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "production" }
@@ -69,7 +49,6 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # on_worker_boot do
 #   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
 # end
-
 # Allow puma to be restarted by `rails restart` command.
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
@@ -87,8 +66,6 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
 threads min_threads_count, max_threads_count
-
-
 #port        ENV.fetch("PORT") { 3000 }
 bind "unix:///var/www/ReNote./tmp/sockets/puma.sock"
 
@@ -106,7 +83,6 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # processes).
 #
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
-
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
 # before forking the application. This takes advantage of Copy On Write
@@ -128,13 +104,14 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # end
 
 # Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restartplugin :tmp_restart
+# plugin :tmp_restartplugin 
+plugin :tmp_restart
 
 
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "production" }
-"config/puma.rb" 57L, 2416C                                  20,0-1        15%
+
 # Any libraries that use thread pools should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum, this matches the default thread size of Active Record.
@@ -143,7 +120,6 @@ environment ENV.fetch("RAILS_ENV") { "production" }
 # min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
 # threads threads_count, threads_count
 # threads min_threads_count, max_threads_count
-
 max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
 threads min_threads_count, max_threads_count
@@ -248,13 +224,14 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # end
 
 # Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restartplugin :tmp_restart
+# plugin :tmp_restartplugin 
+plugin :tmp_restart
 
 
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "production" }
-"config/puma.rb" 57L, 2416C                                  20,0-1        15%
+
 # Any libraries that use thread pools should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum, this matches the default thread size of Active Record.
@@ -305,9 +282,6 @@ threads min_threads_count, max_threads_count
 
 #port        ENV.fetch("PORT") { 3000 }
 bind "unix:///var/www/ReNote./tmp/sockets/puma.sock"
-
-
-
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "production" }
@@ -342,7 +316,6 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 #port        ENV.fetch("PORT") { 3000 }
 bind "unix:///var/www/ReNote./tmp/sockets/puma.sock"
-
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Specifies the number of `workers` to boot in clustered mode.
