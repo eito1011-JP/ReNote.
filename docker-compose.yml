@@ -49,8 +49,8 @@ services:
     <<: *app
     stdin_open: true
     tty: true
-    command: ./bin/webpack-dev-server
-    # command: tail -f /dev/null
+    # command: ./bin/webpack-dev-server
+    command: tail -f /dev/null
     ports:
       - '3035:3035'
     volumes:
