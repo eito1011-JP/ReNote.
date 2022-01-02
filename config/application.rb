@@ -2,6 +2,8 @@ require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
+require "devise"
+require "kaminari"
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
@@ -22,7 +24,6 @@ Bundler.require(*Rails.groups)
 module Rs
   class Application < Rails::Application
     config.time_zone = 'Tokyo'
-
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
@@ -33,6 +34,7 @@ module Rs
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+      config.autoloader = :classic
 
     # Don't generate system test files.
     config.generators.system_tests = nil
@@ -41,7 +43,6 @@ end
 
 module I18nApp
   class Application < Rails::Application
-    config.i18n.default_locale = :ja # 追加
-   
+    config.i18n.default_locale = :ja # 追加 
   end
 end

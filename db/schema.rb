@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_09_25_122011) do
 
-  create_table "memories", charset: "utf8mb4", force: :cascade do |t|
+  create_table "memories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_122011) do
     t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
-  create_table "schedules", charset: "utf8mb4", force: :cascade do |t|
+  create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.date "schedule"
     t.integer "memory_id"
     t.integer "schedule_form"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_122011) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "false"
     t.string "email"
