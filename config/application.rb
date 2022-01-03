@@ -43,10 +43,6 @@ end
 
 module I18nApp
   class Application < Rails::Application
-<<<<<<< HEAD
-    config.i18n.default_locale = :ja # 追加 
-=======
     config.i18n.default_locale = :ja # 追加
->>>>>>> fbf36da6984512d8300281394ded38b212989388
   end
 end
