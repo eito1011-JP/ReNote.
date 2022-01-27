@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/84311368/139574000-cac29f04-2ba0-4c7d-
 ## URL
 http://www.getrenote.click
 ## Demo(デモ)
-![IWyTDUAzdvJsmVasiiV51635489022-1635489674](https://user-images.githubusercontent.com/84311368/140446759-efd1ffd9-39dd-43c9-80e2-1bac8e33a2dd.gif)
+![ceyUoH2j8HDvgDTNFDxe1643256732-1643256804](https://user-images.githubusercontent.com/84311368/151290811-073cc344-2d02-4914-b52e-03be3d61bb58.gif)
 
 ## why did I make(目指した課題解決)
 個々人の記憶力によって最適な復習スケジュールを作れる様にし、できるだけ効率的に復習ができる様になることを目指しました。エビングハウスの忘却曲線を参考にし、手帳で復習スケジュールを管理していた友人を参考にしてアプリを開発しました。
