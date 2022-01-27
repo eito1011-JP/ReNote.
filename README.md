@@ -25,5 +25,6 @@ http://www.getrenote.click
 ## 使用技術
 使用言語: ruby,フレームワーク: rails,ネットワーク: AWS,開発環境: Docker-Compose
 ## ネットワーク構成図
+<img width="603" alt="スクリーンショット 2022-01-27 13 02 03" src="https://user-images.githubusercontent.com/84311368/151290212-2070189d-30b2-4237-b3f2-3097c96d7771.png">
 ## Function I’m gonna make
 ・レスポンシブ対応
