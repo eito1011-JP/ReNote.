@@ -26,7 +26,7 @@ http://www.getrenote.click
 技術 | 選定理由
 -|-
 Ruby　| 日本語の情報が豊富でスタートアップでの開発によく用いられているため
-rails |　上記と同じ
+Ruby on Rails |　上記と同じ
 AWS |　実務ではAWSが使われる機会が多いのとHerokuだとサービスの読み込み時間が遅くなるため
 Docker-Compose |　実務でDockerが使われる機会が多いのと開発環境の違いによるバグを防ぐため
 ## ネットワーク構成図
